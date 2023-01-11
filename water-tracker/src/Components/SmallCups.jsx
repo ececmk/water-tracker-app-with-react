@@ -1,22 +1,21 @@
-import Cup from "./Cup";
+import Cup from './Cup'
 
+function SmallCups(props) {
 
-function SmallCups() {
+  console.log(props.goal)
 
   return (
-   
-    <div className="cups">
-      {(() => {
+  <div className="cups">
+    {(() => {
           let cups = []
-          for(let i = 0; i<8; i++){
+          for(let i = 0; i<props.goal; i++){
             cups.push(<Cup  />)
           }
           return cups
         }
       )()}
     </div>
-  )
-
-}
+  );
+};
 
 export default SmallCups;
