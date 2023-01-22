@@ -1,21 +1,24 @@
+import React from 'react';
 import Cup from './Cup'
+import PropTypes from 'prop-types'
 
-function SmallCups(props) {
+function SmallCups({ goal, handleChange }) {
+  const cups = [];
 
-  console.log(props.goal)
+  for (let i = 0; i < goal; i++) {
+    cups.push(<Cup key={i} change={handleChange} />)
+  }
 
   return (
-  <div className="cups">
-    {(() => {
-          let cups = []
-          for(let i = 0; i<props.goal; i++){
-            cups.push(<Cup  />)
-          }
-          return cups
-        }
-      )()}
+    <div className="cups">
+      {cups}
     </div>
   );
-};
+}
+
+SmallCups.propTypes = {
+  goal: PropTypes.number,
+  handleChange: PropTypes.func
+}
 
 export default SmallCups;

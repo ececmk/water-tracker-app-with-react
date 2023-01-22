@@ -1,37 +1,37 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import BigCup from './Components/BigCup';
 import SmallCups from './Components/SmallCups';
 
+function App() {
+  const [userGoal, setUserGoal] = useState(8)
+  const [defaultGoal, setDefaultGoal] = useState(8)
+  const [currentValue, setCurrentValue] = useState(0)
 
-function App(props) {
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setDefaultGoal(userGoal);
+  }
 
-  const [userGoal, setUserGoal] = useState('')
-  const [defaultGoal, setDefaultGoal] = useState('8')
+  const goalHandler = (event) => {
+    setUserGoal(parseInt(event.target.value || 0, 10));
+  }
 
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-        setDefaultGoal(userGoal);
-     
-       console.log(userGoal)
-       
-    }
-
-    const goalHandler = (event) => {
-      setUserGoal(event.target.value);
+  const handleChange = (value) => {
+    setCurrentValue(currentValue + value);
   }
 
   return (
     <div>
+      <h3>How many cups do you want to drink?</h3>
       <form onSubmit={submitHandler}>
-            <label >Your goal:
-                <input type="text" value={userGoal} onChange={goalHandler} />
-            </label>
-            <button type="submit">Submit Your Goal</button>
-        </form>
-      <BigCup />
-      <SmallCups goal={defaultGoal} />
+        <label >Your goal:
+          <input type="text" value={userGoal} onChange={goalHandler} />
+        </label>
+        <button type="submit">Submit Your Goal</button>
+      </form>
+      <BigCup currentValue={currentValue} />
+      <SmallCups goal={defaultGoal} handleChange={handleChange} />
     </div>
   )
 
