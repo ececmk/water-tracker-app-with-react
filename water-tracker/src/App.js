@@ -17,7 +17,7 @@ function App() {
     setUserGoal(parseInt(event.target.value || 0, 10));
   }
 
-  const handleChange = (value) => {
+  const handleChange = (value, ) => {
     setCurrentValue(currentValue + value);
   }
 
@@ -31,7 +31,7 @@ function App() {
         <button type="submit">Submit Your Goal</button>
       </form>
       <BigCup currentValue={currentValue} />
-      <SmallCups goal={defaultGoal} handleChange={handleChange} />
+      <SmallCups goal={defaultGoal} handleChange={handleChange}  />
     </div>
   )
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 function Cup(props) {
   const [count, setCount] = useState(0);
-
+ 
   function highlightCups() {
     if (count === 0) {
       setCount(1)
@@ -13,10 +13,9 @@ function Cup(props) {
       props.change(-1)
     }
   }
-
   return (
     <div className={`cup cup-small ${count ? 'full' : ''}`} onClick={highlightCups}>
-            250 ml{count}
+            250 ml
     </div>
   )
 }
