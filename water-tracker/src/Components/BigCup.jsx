@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types'
 
 function BigCup(props) {
-  const liters = document.getElementById('liters')
+  let percentage = parseInt(props.currentValue / props.goal * 100 || 0, 10)
+  let remained= parseInt(props.goal / 4 - (250 * props.currentValue / 1000) || 0, 10)
+  /*const liters = document.getElementById('liters')
   const percentage = document.getElementById('percentage')
   const remained = document.getElementById('remained')
 
@@ -22,22 +24,22 @@ function BigCup(props) {
       remained.style.visibility = 'visible'
       liters.innerText = `${props.goal / 4 - (250 * props.currentValue / 1000)}L`
     }
-  }
-  
+  }*/
+
   return (
-    <div className="cup">
-      <div className="remained">
-        <span id="liters"></span>
-        <small>Remained {props.currentValue}</small>
+    <div className={`cup ${props.currentValue === 0 ? 'visible' : '' ||  props.currentValue === props.goal ? 'hidden!' : ''}`}>
+      <div className="percentage">{percentage}%</div>
+      <div className="remained" id="remained">
+        <span>{remained}L</span>
+        <small>Remained</small>
       </div>
-      <div className="percentage"></div>
     </div>
   )
 }
 
 BigCup.propTypes = {
-  currentValue: PropTypes.number,
-  goal: PropTypes.number
+  goal: PropTypes.number,
+  currentValue: PropTypes.number
 }
 
 export default BigCup;

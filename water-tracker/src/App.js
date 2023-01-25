@@ -22,13 +22,13 @@ function App() {
   }
 
   return (
-    <div>
+    <div className='main-wrapper' >
       <h3>How many cups do you want to drink?</h3>
-      <form onSubmit={submitHandler}>
+      <form className='form' onSubmit={submitHandler}>
         <label >Your goal:
           <input type="text" value={userGoal} onChange={goalHandler} />
         </label>
-        <button type="submit">Submit Your Goal</button>
+        <button className="btn" type="submit">Submit</button>
       </form>
       <BigCup currentValue={currentValue} />
       <SmallCups goal={defaultGoal} handleChange={handleChange}  />
