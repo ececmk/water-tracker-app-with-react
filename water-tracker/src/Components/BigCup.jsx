@@ -1,38 +1,30 @@
-import React, {useState} from 'react';
+import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types'
 
 function BigCup(props) {
-  let percentage = parseInt(props.currentValue / props.goal * 100 || 0, 10)
-  let remained= parseInt(props.goal / 4 - (250 * props.currentValue / 1000) || 0, 10)
-  /*const liters = document.getElementById('liters')
-  const percentage = document.getElementById('percentage')
-  const remained = document.getElementById('remained')
+  
+  const percentageRef = useRef(null);
 
-  function updateBigCup(){
+  useEffect(()=>{
     if(props.currentValue === 0){
-      percentage.style.visibility ='hidden'
-      percentage.style.height = 0
+      percentageRef.current.style.visibility = 'hidden'
+      percentageRef.current.style.height = 0
     }else {
-      percentage.style.visibility = 'visible'
-      percentage.style.height = `${props.currentValue/ props.goal * 330}px`
-      percentage.innerText = `${props.currentValue / props.goal * 100}%`
+      percentageRef.current.style.visibility = 'visible'
+      percentageRef.current.style.height = `${props.currentValue/ props.goal * 330}px`
+      percentageRef.current.innerText = `${props.currentValue / props.goal * 100}%`
     }
-    if(props.currentValue === props.goal){
-      remained.style.visibility = 'hidden'
-      remained.style.height = 0
-    }else {
-      remained.style.visibility = 'visible'
-      liters.innerText = `${props.goal / 4 - (250 * props.currentValue / 1000)}L`
-    }
-  }*/
+  }, [props.currentValue, props.goal])
 
+  let percentage = parseInt(props.currentValue / props.goal * 100 || 0, 10)
+  console.log('percentage', percentage);
+
+  console.log('goal', props.goal)
+  console.log('current', props.currentValue)
+ 
   return (
     <div className={`cup ${props.currentValue === 0 ? 'visible' : '' ||  props.currentValue === props.goal ? 'hidden!' : ''}`}>
-      <div className="percentage">{percentage}%</div>
-      <div className="remained" id="remained">
-        <span>{remained}L</span>
-        <small>Remained</small>
-      </div>
+      <div ref={percentageRef} className="percentage">{percentage}%</div>
     </div>
   )
 }
