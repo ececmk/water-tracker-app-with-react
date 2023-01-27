@@ -66,6 +66,7 @@ input {
   flex-direction: column;
   overflow: hidden;
   position: relative;
+  z-index: 0;
 }
 
 .cup.cup-small {
@@ -133,8 +134,17 @@ input {
   text-align: center;
   flex: 1;
   transition: 0.3s ease;
+  z-index: 1;
 }
 
+.remained span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.remained small {
+  font-size: 12px;
+}
 .percentage {
   font-size: 30px;
   margin: 0 auto;
@@ -147,6 +157,7 @@ input {
   bottom:0;
   min-height: 60px;
   transition: 0.3s ease;
+  z-index: 0;
 }
 
 .text {

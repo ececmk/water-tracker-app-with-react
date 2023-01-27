@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 function BigCup(props) {
 
   const percentageRef = useRef(null);
+  const remainedRef = useRef(null);
+  const literRef = useRef(null);
   let percentageNumber = props.currentValue / props.goal;
 
   useEffect(() => {
@@ -13,6 +15,16 @@ function BigCup(props) {
       percentageRef.current.style.visibility = 'visible'
       percentageRef.current.style.height = `${Math.round(percentageNumber * 330)}px`
       percentageRef.current.innerText = `${Math.round(percentageNumber * 100)}%`
+    }
+  }, [props.currentValue, props.goal, percentageNumber])
+
+  useEffect(() => {
+    if(props.currentValue === props.goal){
+      remainedRef.current.style.visibility = 'hidden'
+      remainedRef.current.style.height = 0
+    }else {
+      remainedRef.current.style.visibility = 'visible'
+      literRef.current.innerText = `${250 * props.goal/1000 - (250 * props.currentValue / 1000)}L`
     }
   }, [props.currentValue, props.goal, percentageNumber])
 
@@ -40,6 +52,10 @@ function BigCup(props) {
     <div className='big-cup-wrapper'>
       <div className='message'>{message}</div>
       <div className='cup'>
+        <div className="remained" ref={remainedRef}>
+          <span ref={literRef}></span>
+          <small>Remained</small>
+        </div>
         <div ref={percentageRef} className="percentage">{percentage}%</div>
       </div>
     </div>
