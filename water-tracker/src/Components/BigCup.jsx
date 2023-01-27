@@ -51,11 +51,11 @@ function BigCup(props) {
   return (
     <div className='big-cup-wrapper'>
       <div className='message'>{message}</div>
+      <div className="remained" ref={remainedRef}>
+        <span ref={literRef}></span>
+        <small>Remained</small>
+      </div>
       <div className='cup'>
-        <div className="remained" ref={remainedRef}>
-          <span ref={literRef}></span>
-          <small>Remained</small>
-        </div>
         <div ref={percentageRef} className="percentage">{percentage}%</div>
       </div>
     </div>
