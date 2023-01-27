@@ -1,6 +1,5 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types'
-
 function BigCup(props) {
 
   const percentageRef = useRef(null);
@@ -18,10 +17,31 @@ function BigCup(props) {
   }, [props.currentValue, props.goal, percentageNumber])
 
   let percentage = parseInt(props.currentValue / props.goal * 100 || 0, 10)
+  
+  let message = ''
+
+  if(percentage> 0 && percentage <= 15){
+    message = 'A fresh start!'
+  }
+  if(percentage > 15 && percentage < 50 ){
+    message = 'Remember your goal!'
+  }
+  if(percentage === 50) {
+    message = 'Half way there!'
+  }
+  if(percentage > 50 && percentage <= 99) {
+    message='Dont quit now!'
+  }
+  if(percentage === 100) {
+    message= "That's all! Hurray!"
+  }
 
   return (
-    <div className='cup'>
-      <div ref={percentageRef} className="percentage">{percentage}%</div>
+    <div className='big-cup-wrapper'>
+      <div className='message'>{message}</div>
+      <div className='cup'>
+        <div ref={percentageRef} className="percentage">{percentage}%</div>
+      </div>
     </div>
   )
 }

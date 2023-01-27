@@ -30,8 +30,9 @@ h3 {
 
 input {
   width: 40px;
+  height: 40px;
   padding: 4px;
-  margin: 2px;
+  margin: 5px;
 }
 
 .main-wrapper{
@@ -41,12 +42,14 @@ input {
   align-items: center;
 }
 
-.btn {
-  background-color: #fff;
-  color: var(--border-color);
-  border: none;
-  padding: 4px;
-  margin-left: 10px;
+.title {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.goal-label{
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .cup {
@@ -89,7 +92,37 @@ input {
   justify-content: center;
   width: 280px;
 }
+/*
+.wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  background: url(https://image.ibb.co/fmHm66/wave.png);
+  background-position: 0px 350px;
+  background-repeat: repeat-x;
+  animation: filling 10s ease-in-out;
+  animation-iteration-count: 1;
+}
 
+@keyframes filling {
+  50% {background-position: 3000px 0px;}
+  100% {background-position: 6000px 350px;}
+}*/
+.big-cup-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message{
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 20px;
+
+}
 .remained {
   display: flex;
   flex-direction: column;
@@ -117,4 +150,22 @@ input {
 .text {
   text-align: center;
   margin: 0 0 5px;
+}
+
+.btn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  background-color:  #fff;
+  color :#3494e4;
+  box-shadow: inset 0 0 0 0 #ffff;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in;
+}
+
+.btn:hover {
+  box-shadow: inset 100px 0 0 0 #3494e4;
+  color: var(--border-color);
 }
