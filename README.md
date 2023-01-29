@@ -3,6 +3,8 @@
 Water Tracker App is a web application developed with React that allows you to track the amount of water you drink. It is developed using the useState, useEffect and useRef hooks. 
 The Water Tracker App is also mobile friendly and can be viewed seamlessly on smaller screens such as phones and tablets.
 
+## Mobile View
+
 ![water-tracker-app-mobile](https://user-images.githubusercontent.com/86318154/215352829-2c9b3ad1-25e5-43aa-bf9b-6af5fe3778b7.png)
 
 ## Tech Stack
