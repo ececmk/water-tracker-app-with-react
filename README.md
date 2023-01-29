@@ -9,7 +9,7 @@ The Water Tracker App is also mobile friendly and can be viewed seamlessly on sm
 
 ## Demo
 
-[Live Demo](https://water-tracker-with-react.netlify.app/)
+# [Live Demo](https://water-tracker-with-react.netlify.app/)
 
 ## Tech Stack
 
