@@ -15,10 +15,10 @@ The Water Tracker App is also mobile friendly and can be viewed seamlessly on sm
 
 | Color            | Hex                                                                |
 | ----------------- | ------------------------------------------------------------------ |
-| Mariner | ![#2c7fbe](https://via.placeholder.com/10/0a192f?text=+)#2c7fbe|
-| Dodger Blue | ![#32bafa](https://via.placeholder.com/10/f8f8f8?text=+) #32bafa |
-| Picton Blue | ![#3494e4](https://via.placeholder.com/10/00b48a?text=+) #3494e4 |
-| White | ![#ffff](https://via.placeholder.com/10/00b48a?text=+)#ffff| 
+| Mariner | ![#2c7fbe]|
+| Dodger Blue | ![#32bafa]|
+| Picton Blue | ![#3494e4]|
+| White | ![#ffff]| 
 
 [Live Demo](https://water-tracker-with-react.netlify.app/)
 
