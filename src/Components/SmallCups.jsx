@@ -1,6 +1,7 @@
 import React from 'react';
-import Cup from './Cup'
 import PropTypes from 'prop-types'
+import Cup from './Cup'
+import './SmallCups.css'
 
 function SmallCups({ goal, handleChange }) {
   const cups = [];

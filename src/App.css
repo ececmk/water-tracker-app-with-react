@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
 
 :root {
-  --border-color: #144fc6;
-  --fill-color: #6ab3f8;
+  --border-color: #2c7fbe;
+  --fill-color: #32bafa;
+  --base-bg-color: #3494e4;
+  --primary-text-color: #fff;
+  --cup-bg: #fff;
 }
 
 * {
@@ -10,34 +13,24 @@
 }
 
 body {
-  background-color: #3494e4;
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  background-color: var(--base-bg-color);
+  color: var(--primary-text-color);
+  font-family: "Montserrat", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
 }
 
-h1 {
-  margin: 10px 0 0;
-}
-
-h3 {
-  font-weight: 400;
-  margin: 10px 0;
-}
-
 input {
-  width: 40px;
-  height: 40px;
-  padding: 4px;
+  width: 30px;
+  height: 30px;
   margin: 5px;
   border: none;
-  border-radius: 30%;
+  border-radius: 20%;
 }
 
-.main-wrapper{
+.main-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,114 +42,14 @@ input {
   font-size: 32px;
 }
 
-.goal-label{
+.goal-label {
   font-weight: 400;
   font-size: 24px;
 }
 
-.cup {
-  background-color: #fff;
-  border: 4px solid var(--border-color);
-  color: var(--border-color);
-  border-radius: 0 0 40px 40px;
-  height: 330px;
-  width: 150px;
-  margin: 20px 0;
+.cups-wrapper {
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
- 
-}
-
-.cup.cup-small {
-  height: 95px;
-  width: 50px;
-  border-radius: 0 0 15px 15px;
-  background-color: rgba(255, 255, 255, 0.9);
-  cursor: pointer;
-  font-size: 14px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 5px;
-  transition: 0.3s ease;
-}
-
-.cup.cup-small.full {
-  background-color: var(--fill-color);
-  color: #fff;
-}
-
-.cups {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 280px;
-}
-/*
-.wave {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: 40px;
-  background: url(https://image.ibb.co/fmHm66/wave.png);
-  background-position: 0px 350px;
-  background-repeat: repeat-x;
-  animation: filling 10s ease-in-out;
-  animation-iteration-count: 1;
-}
-
-@keyframes filling {
-  50% {background-position: 3000px 0px;}
-  100% {background-position: 6000px 350px;}
-}*/
-.big-cup-wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.message{
-  font-weight: bold;
-  font-size: 32px;
-  margin-top: 10px;
-
-}
-.remained {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 1;
-  transition: 0.3s ease;
-  margin-top: 10px;
-}
-
-.remained span {
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.remained small {
-  font-size: 12px;
-}
-.percentage {
-  font-size: 30px;
-  margin: 0 auto;
-  padding: 10px;
-  width: 150px;
-  background-color: var(--fill-color);
-  color: var(--border-color);
-  text-align: center;
-  position: absolute;
-  bottom:0;
-  min-height: 60px;
-  transition: 0.3s ease;
+  align-items: flex-end;
 }
 
 .text {
@@ -171,13 +64,22 @@ input {
   font-weight: bold;
   border: none;
   cursor: pointer;
-  background-color:  #fff;
-  color :#3494e4;
+  background-color: #fff;
+  color: #3494e4;
   box-shadow: inset 0 0 0 0 #ffff;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in;
 }
 
 .btn:hover {
   box-shadow: inset 100px 0 0 0 #3494e4;
   color: var(--border-color);
+}
+
+
+@media only screen and (max-width: 600px) {
+  .title {
+    max-width: 400px;
+    text-align: center;
+  }
+
 }

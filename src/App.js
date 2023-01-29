@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import './App.css';
 import BigCup from './Components/BigCup';
 import SmallCups from './Components/SmallCups';
+import Message from './Components/Message';
 
 function App() {
   const [userGoal, setUserGoal] = useState(8)
   const [defaultGoal, setDefaultGoal] = useState(8)
   const [currentValue, setCurrentValue] = useState(0)
 
-  const submitHandler = (e) => {
+  const onSubmitUserGoal = (e) => {
     e.preventDefault();
     setDefaultGoal(userGoal);
   }
 
-  const goalHandler = (event) => {
+  const onChangeUserGoal = (event) => {
     setUserGoal(parseInt(event.target.value) || 0, 10);
   }
 
@@ -24,14 +24,17 @@ function App() {
   return (
     <div className='main-wrapper' >
       <h3 className='title'>How many cups do you want to drink?</h3>
-      <form className='form' onSubmit={submitHandler}>
+      <form className='form' onSubmit={onSubmitUserGoal}>
         <label className='goal-label' >Your goal:
-          <input type="text" value={userGoal} onChange={goalHandler} />
+          <input type="text" value={userGoal} onChange={onChangeUserGoal} />
         </label>
-        <button className="btn from-top" type="submit">Submit</button>
+        <button className="btn" type="submit">Submit</button>
       </form>
-      <BigCup goal={defaultGoal} currentValue={currentValue} />
-      <SmallCups goal={defaultGoal} handleChange={handleChange}  />
+      <Message goal={defaultGoal} currentValue={currentValue}  />
+      <div className='cups-wrapper'>
+        <BigCup goal={defaultGoal} currentValue={currentValue} />
+        <SmallCups goal={defaultGoal} handleChange={handleChange}  />
+      </div>
     </div>
   )
 

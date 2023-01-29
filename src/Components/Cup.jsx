@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types'
+import './Cup.css'
 
 function Cup(props) {
   const [count, setCount] = useState(0);
@@ -15,7 +16,7 @@ function Cup(props) {
   }
   return (
     <div className={`cup cup-small ${count ? 'full' : ''}`} onClick={highlightCups}>
-            250 ml
+      250 ml
     </div>
   )
 }
