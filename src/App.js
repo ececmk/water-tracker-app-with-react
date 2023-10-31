@@ -14,12 +14,12 @@ function App() {
   }
 
   const onChangeUserGoal = (event) => {
-    setUserGoal(parseInt(event.target.value) || 0, 10);
-  }
+  setUserGoal(parseInt(event.target.value, 10) || 0);
+}
 
-  const handleChange = (value, ) => {
-    setCurrentValue(parseInt(currentValue + value) || 0, 10);
-  }
+const handleChange = (value) => {
+  setCurrentValue(parseInt(currentValue + value, 10) || 0);
+}
 
   return (
     <div className='main-wrapper' >
